@@ -6,7 +6,7 @@ import time
 import openai
 import datetime
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 
 def audio_file_name():
@@ -24,6 +24,11 @@ def openai_response(text):
         max_tokens=1000,
     )
     return response.choices[0].text
+
+
+def APIName():
+    return "Remember your name is Khushi."
+
 
 
 class SpeechToText:
@@ -83,6 +88,8 @@ def main():
     language1 = 'en-US'
     # Language in which you want to convert the text
     language2 = 'fr'
+    text = openai_response(APIName())
+    print(f"OpenAI return: {text}")
 
     while True:
         # Creating an instance of SpeechToText class and calling its convert method
